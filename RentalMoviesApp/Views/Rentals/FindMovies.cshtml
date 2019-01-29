@@ -1,0 +1,16 @@
+﻿@model RentalMoviesApp.Models.Movie
+
+@{ 
+    ViewBag.Title = "FindMovies";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2 style="color: blue">Enter movie's name bellow</h2>
+<br>
+@using (Html.BeginForm("FindMyMovies", "Rentals"))
+{
+    <div class="form-group">
+        @Html.TextBoxFor(model => model.Name)
+        @Html.ValidationMessageFor(model => model.Name)
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+  }

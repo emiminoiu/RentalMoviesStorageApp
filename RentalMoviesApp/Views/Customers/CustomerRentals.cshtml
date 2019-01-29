@@ -1,0 +1,30 @@
+﻿@using Glimpse.Core.Extensions
+@model IEnumerable<RentalMoviesApp.Models.Customer>
+    ViewBag.Title = "CustomerRentals";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customer Rentals</h2>
+@if (!Model.)
+{
+    <p>@Model.Name hasn't rented any movies yet.</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Movies</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var customer in Model)
+            {
+                <tr>
+                   <td>@customer.Movie</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}*@
+}

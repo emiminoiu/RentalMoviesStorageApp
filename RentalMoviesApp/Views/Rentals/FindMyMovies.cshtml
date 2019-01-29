@@ -1,0 +1,32 @@
+﻿
+@model IEnumerable<RentalMoviesApp.Models.Customer>
+@{
+    ViewBag.Title = "FindMyMovies";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@if (!Model.Any())
+{
+    <h2 style="color: green">This movie wasn't rented by any customer yet.</h2>
+}
+else
+{
+    <h2>The following customers rented searched movie</h2>
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>Customer</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(customer.Name, "Edit", "Customers", new { id = customer.Id }, null)</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+

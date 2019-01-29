@@ -1,0 +1,25 @@
+﻿@model RentalMoviesApp.Models.Customer
+
+@{
+    ViewBag.Title = Model.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="color: gold">@Model.Name Movies Rental</h2>
+
+
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>Movies</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var movie in Model.Movie)
+        {
+            <tr>
+                <td>@movie.Name</td>
+            </tr>
+        }
+        </tbody>
+    </table>
